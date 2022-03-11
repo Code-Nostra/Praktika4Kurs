@@ -1,0 +1,78 @@
+﻿<Window
+    x:Class="Praktika.Views.Windows.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:commands="clr-namespace:Praktika.Infrastructures.Commands"
+    xmlns:fa="http://schemas.fontawesome.com/icons/"
+    xmlns:ia="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:Praktika.Viewmodels"
+    Width="1000"
+    Height="700"
+    Background="Transparent"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None">
+    <!--  Бинд датаконтекст к вьюмоделу viewmodel  -->
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
+
+    <!--  Добавление ресурсов  -->
+    <Window.Resources>
+        <ResourceDictionary>
+            <commands:CloseApplicationCommand x:Key="CommandCloseApplication" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/ViewResources/ViewResources.xaml" />
+                <ResourceDictionary Source="/Resources/Animations/MainWindowAnimation.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <ia:Interaction.Triggers>
+        <ia:EventTrigger EventName="Loaded">
+            <ia:InvokeCommandAction Command="{Binding UpdateWindowViewCommand}" CommandParameter="0" />
+            <ia:InvokeCommandAction Command="{Binding WindowLoadedMessabeBusCommand}" />
+        </ia:EventTrigger>
+    </ia:Interaction.Triggers>
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <ContentControl Grid.RowSpan="2" Content="{Binding SelectedViewModel}" />
+
+
+        <!--  Верхняя панель  -->
+        <Grid
+            Grid.ColumnSpan="3"
+            Background="Transparent"
+            MouseLeftButtonDown="DragPanel">
+            <Button
+                HorizontalAlignment="Right"
+                Command="{StaticResource CommandCloseApplication}"
+                Style="{DynamicResource IMGButton}">
+                <Button.Resources>
+                    <ImageSource x:Key="Img">/Resources/Assets/Icons/CloseApp.png</ImageSource>
+                </Button.Resources>
+            </Button>
+
+
+            <Button
+                Margin="5,0,0,0"
+                HorizontalAlignment="Left"
+                Style="{DynamicResource IMGButton}">
+                <Button.Resources>
+                    <ImageSource x:Key="Img">/Resources/Assets/Icons/dots.png</ImageSource>
+                </Button.Resources>
+            </Button>
+
+        </Grid>
+
+
+
+    </Grid>
+</Window>
