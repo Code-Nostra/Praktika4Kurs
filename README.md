@@ -22,14 +22,14 @@
 
 ### Встречающая пользователей страница регистрации
 
-![Авторизация](https://raw.githubusercontent.com/Htomsik/Praktika4Kurs/master/ReadmyAssets/MainWindow.png)
+![Авторизация](https://raw.githubusercontent.com/Code-Nostra/Praktika4Kurs/master/ReadmyAssets/MainWindow.png)
 
 ### Страница регистрации
 
-![Регистрация](https://raw.githubusercontent.com/Htomsik/Praktika4Kurs/master/ReadmyAssets/registrwindow.png)
+![Регистрация](https://raw.githubusercontent.com/Code-Nostra/Praktika4Kurs/master/ReadmyAssets/registrwindow.png)
 
 ### Главная страница приложения 
-![Главное окно](https://raw.githubusercontent.com/Htomsik/Praktika4Kurs/master/ReadmyAssets/MainMenu.png)
+![Главное окно](https://raw.githubusercontent.com/Code-Nostra/Praktika4Kurs/master/ReadmyAssets/MainMenu.png)
 
 #### Технологии
 
@@ -86,7 +86,7 @@
     - [X] Создание простой шины сообщения для переключения окон приложения
 
 ### Текущая диаграмма классов:
-![classDiagram](https://raw.githubusercontent.com/Htomsik/Praktika4Kurs/master/ReadmyAssets/ClassDiagram.png)
+![classDiagram](https://raw.githubusercontent.com/Code-Nostra/Praktika4Kurs/master/ReadmyAssets/ClassDiagram.png)
 
 > ##### P.s За верность соединений не ручаемся, опыт в построении диаграмм классов не особо большой
    
